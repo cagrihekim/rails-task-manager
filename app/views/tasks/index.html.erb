@@ -1,0 +1,10 @@
+<h1>List of Tasks</h1>
+<ul>
+  <% @tasks.each do |task| %>
+    <li><%= task.completed ? '✌🏼' : '[ ]' %> <%= link_to task.title, task_path(task.id) %> <%= link_to '🗑', task_path(task.id), method: :delete %></li>
+  <% end %>
+</ul>
+
+<br/>
+<%= link_to 'New', task_new_path %>
+
